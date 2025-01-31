@@ -1,0 +1,59 @@
+create database restaurante;
+use restaurante;
+create table funcionarios(
+id_funcionarios int primary key auto_increment,
+nome VARCHAR(255),
+CPF VARCHAR(14),
+data_nascimento date,
+endereço VARCHAR (255),
+telefone VARCHAR (15),
+email VARCHAR(100),
+cargo VARCHAR(100),
+salario decimal(10,2),
+data_admissao date
+);
+
+create table cliente(
+id_cliente int primary key auto_increment,
+nome VARCHAR (255),
+cpf VARCHAR (14),
+data_nascimento date,
+endereco VARCHAR(255),
+telefone VARCHAR(15),
+email VARCHAR (100),
+data_cadastro date
+);
+
+create table produtos(
+id_produto int primary key auto_increment,
+nome VARCHAR(255),
+descricao text,
+preco decimal(10,2),
+categoria VARCHAR (100)
+);
+
+create table pedidos (
+id_pedido int primary key auto_increment,
+id_cliente int,
+id_funcionario int,
+id_produto int,
+quantidade int, 
+preco decimal (10,2),
+data_pedido date,
+status_pedidos VARCHAR(50),
+foreign key (id_cliente) references cliente (id_cliente),
+foreign key (id_funcionario) references cliente (id_cliente),
+foreign key (id_produto) references produtos (id_produto)
+);
+
+
+create table info_produtos(
+id_info int auto_increment primary key,
+id_produto int,
+ingredirentes text,
+fornecerdor varchar(255),
+foreign key (id_produto) references produtos(id_produto)
+);
+
+insert into cliente (nome, email, data_nascimento, telefone) VALUES
+				('Marcos', 'marcos@email.com', 1991-01-05, 3197624545)
