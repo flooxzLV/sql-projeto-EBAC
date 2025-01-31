@@ -1,9 +1,13 @@
 # exercicios-sql-EBAC
 
 Índice
+
 Sobre o projeto
+
 Módulos
+
 Como acessar o projeto?
+
 Tecnologias utilizadas
 
 Sobre o Projeto
